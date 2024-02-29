@@ -5,12 +5,15 @@ import { MR_HOPE_AVATAR } from "./logo.js";
 
 export default hopeTheme(
   {
-    hostname: "https://mister-hope.github.io",
+    hostname: "https://erickiku.github.io/yizhe_blog/",
 
-    author: {
-      name: "Mr.Hope",
-      url: "https://mister-hope.com",
-    },
+    // author: {
+    //   name: "Mr.Hope",
+    //   url: "https://mister-hope.com",
+    //   email: "2966678301@qq.com",
+    // },
+    // 站点图标
+    favicon: "https://s11.ax1x.com/2024/02/28/pFwmDB9.png",
 
     iconAssets: "//at.alicdn.com/t/c/font_4447938_8xke70w7x7l.css",
 
@@ -18,6 +21,7 @@ export default hopeTheme(
 
     repo: "https://github.com/EricKiku/yizhe_blog",
     repoLabel: "GitHub",
+    hotReload: true,
     // 隐藏打印按钮
     print: false,
     // 隐藏全屏按钮
@@ -31,7 +35,7 @@ export default hopeTheme(
     darkmode: "toggle",
     // 导航栏
     navbar,
-
+    navTitle: "yizhe的博客",
     // 侧边栏
     sidebar: "heading",
 
@@ -46,6 +50,9 @@ export default hopeTheme(
       intro: "/intro.html",
       avatar: "",
       name: "yizhe",
+      // 时间线标题
+      timeline: "过往日记",
+      articleInfo: ["Author", "Category"],
       medias: {
         Gitee: "https://gitee.com/EricKiku",
         GitHub: "https://github.com/EricKiku",
@@ -71,7 +78,7 @@ export default hopeTheme(
     // 在这里配置主题提供的插件
     plugins: {
       blog: {
-        article: "/article/",
+        article: "/articles/",
         categoryItem: false,
         tagItem: false,
         star: false,
@@ -80,10 +87,13 @@ export default hopeTheme(
 
       // 在启用之前需要安装 @waline/client
       // 警告: 这是一个仅供演示的测试服务器，在生产环境中请自行部署并使用自己的服务器！
-      // comment: {
-      //   provider: "Waline",
-      //   serverURL: "https://waline-comment.vuejs.press",
-      // },
+      comment: {
+        provider: "Giscus",
+        repo: "EricKiku/yizhe_blog",
+        repoId: "R_kgDOLZMf3Q",
+        category: "Announcements",
+        categoryId: "DIC_kwDOLZMf3c4Cdmy8",
+      },
 
       components: {
         components: ["Badge", "VPCard"],
