@@ -7,11 +7,15 @@ export default hopeTheme(
   {
     hostname: "https://erickiku.github.io/yizhe_blog/",
 
-    // author: {
-    //   name: "Mr.Hope",
-    //   url: "https://mister-hope.com",
-    //   email: "2966678301@qq.com",
-    // },
+    author: {
+      name: "Yizhe",
+      url: "https://github.com/EricKiku",
+      email: "2966678301@qq.com",
+    },
+    // 文章最后显示更新时间和贡献者
+    lastUpdated: false,
+    contributors: false,
+    editLink: false,
     // 站点图标
     favicon: "https://s11.ax1x.com/2024/02/28/pFwmDB9.png",
 
@@ -30,14 +34,15 @@ export default hopeTheme(
     pure: true,
 
     docsDir: "src",
-
+    // 文章右侧内容目录
+    // toc: false,
     // 深色切换
     darkmode: "toggle",
     // 导航栏
     navbar,
     navTitle: "yizhe的博客",
     // 侧边栏
-    sidebar: "heading",
+    sidebar: false,
 
     // 页脚
     footer: "默认页脚",
@@ -79,10 +84,10 @@ export default hopeTheme(
     plugins: {
       blog: {
         article: "/articles/",
-        categoryItem: false,
         tagItem: false,
         star: false,
         timeline: false,
+        excerptLength: 0,
       },
 
       // 在启用之前需要安装 @waline/client

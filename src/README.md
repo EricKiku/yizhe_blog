@@ -2,7 +2,7 @@
 home: true
 layout: BlogHome
 icon: home
-title: 主页
+title: yizhe主页
 heroImage: https://s11.ax1x.com/2024/02/28/pFwmDB9.png
 heroText: yizhe
 # heroFullScreen: true
