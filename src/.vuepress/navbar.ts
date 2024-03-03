@@ -7,4 +7,9 @@ export default navbar([
     link: "/",
     activeMatch: "^/",
   },
+  {
+    text: "工具",
+    link: "/tools/",
+    activeMatch: "^/tools/",
+  },
 ]);
