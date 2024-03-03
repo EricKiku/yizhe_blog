@@ -51,7 +51,7 @@ npm run dev
 
 ## 目录详解
 
-![image-20231225225337440](D:\Typora\images\image-20231225225337440.png)
+![目录](https://cdn.jsdelivr.net/gh/EricKiku/pictures@main/img/image-20231225225337440.png)
 
 * `.vscode`：vscode的插件提示文件夹
 * `node_modules`：依赖包
