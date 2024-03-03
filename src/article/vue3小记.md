@@ -6,9 +6,9 @@ category:
 
 
 
-#  创建项目
+##  创建项目
 
-## 基于`Vite`创建
+### 基于`Vite`创建
 
 ```powershell
 ## 创建
@@ -49,7 +49,7 @@ npm run dev
 
 
 
-## 目录详解
+### 目录详解
 
 ![目录](https://cdn.jsdelivr.net/gh/EricKiku/pictures@main/img/image-20231225225337440.png)
 
@@ -67,7 +67,7 @@ npm run dev
 
 
 
-## main.ts
+### main.ts
 
 * `Vite`项目中，`index.html`是入口文件，写在项目最外层
 * 入口文件通过引入JS标签，使用到`main.ts`
@@ -84,9 +84,9 @@ createApp(App).mount("#app")
 
 
 
-#  核心语法
+##  核心语法
 
-## setup
+### setup
 
 `setup`是`vue3`的一个新的配置，值是一个函数，定义好的数据和方法需要使用`return`提交到外部
 
@@ -152,7 +152,7 @@ return ()=>{
 
 
 
-## setup语法糖
+### setup语法糖
 
 频繁的使用`定义数据`和`return`会变得繁琐，所以可以使用`setup语法糖`，在`script`标签中添加一个属性`setup`，这个script会自动的使用setup函数，并且返回其中的数据
 
@@ -196,7 +196,7 @@ let name = "zhangsan"
 
 
 
-## 两个script
+### 两个script
 
 使用多个`script`标签的作用是：第一个用于指定组件名，如果不指定，那么组件名就是`文件名`，不利于维护。所以需要两个script标签，第一个不使用`setup`语法糖，定义组件名，第二个使用`setup`语法糖，定义数据
 
@@ -261,7 +261,7 @@ defineOptions({
 
 
 
-## [ref]
+### [ref]
 
 定义`基本类型和对象类型的`响应式数据
 
@@ -271,7 +271,7 @@ defineOptions({
 
 
 
-## [reactive]
+### [reactive]
 
 定义`对象类型`的响应式
 
@@ -302,7 +302,7 @@ const add = () => {
 
 
 
-## [toRefs]
+### [toRefs]
 
 功能：:gear:把一个`响应式对象`中的键值解构出来，依然维持响应式
 
@@ -345,7 +345,7 @@ function changeName() {
 
 
 
-## [computed]
+### [computed]
 
 计算属性，`有缓存`
 
@@ -400,7 +400,7 @@ function changeFullName() {
 
 
 
-## [watch]
+### [watch]
 
 功能:gear:：监视数据的变化
 
@@ -547,7 +547,7 @@ watch([() => person.name, () => person.parent.p1], (newValue, oldValue) => {
 
 
 
-## [watchEffect]
+### [watchEffect]
 
 自动监听回调函数中用到的数据
 
@@ -563,7 +563,7 @@ watchEffect(() => {
 
 
 
-## [标签的ref]
+### [标签的ref]
 
 给普通HTML元素添加属性`ref`，再通过js`let xxx = ref()`获得DOM元素
 
@@ -606,7 +606,7 @@ console.log(index.value.a);// 打印组件实例
 
 
 
-## [props]
+### [props]
 
 用于`父组件`给`子组件`传递数据
 
@@ -645,7 +645,7 @@ withDefaults(defineProps<{ persons: Persons }>(), {
 
 
 
-## [hooks]
+### [hooks]
 
 `hooks`是组合式API的主要原因
 
@@ -692,7 +692,7 @@ const { sum,ten, add } = useSum()
 
 
 
-# 路由
+## 路由
 
 安装
 
@@ -700,7 +700,7 @@ const { sum,ten, add } = useSum()
 npm i vue-router
 ```
 
-## 创建路由
+### 创建路由
 
 创建路由文件`router/index.ts`
 
@@ -736,7 +736,7 @@ createApp(App).use(router).mount("#app");
 
 
 
-## 工作模式
+### 工作模式
 
 1. `history`模式
 
@@ -772,7 +772,7 @@ createApp(App).use(router).mount("#app");
 
 
 
-## 路由的props配置
+### 路由的props配置
 
 使用`props`配置，可以让路由组件通过props接收数据
 
@@ -828,7 +828,7 @@ defineProps(['id']);	//id可以直接使用了
 
 
 
-## replace
+### replace
 
 把路由跳转变为`replace`模式
 
@@ -840,9 +840,9 @@ defineProps(['id']);	//id可以直接使用了
 
 
 
-# Pinia
+## Pinia
 
-## 使用
+### 使用
 
 安装
 
@@ -886,7 +886,7 @@ export const useCountStore = defineStore("count", {
 
 
 
-## 解构
+### 解构
 
 ```js
 let {data:{content:title}} = await axios(.....)
@@ -896,7 +896,7 @@ let {data:{content:title}} = await axios(.....)
 
 ​		
 
-## storeToRefs
+### storeToRefs
 
 在组件中使用时
 
@@ -923,7 +923,7 @@ const { sum, tenSum } = storeToRefs(useCountStore())
 
 
 
-## $subscribe
+### $subscribe
 
 订阅，更新`store`中的数据时触发
 
@@ -944,7 +944,7 @@ countStore.$subscribe((mutate, state) => {
 
 
 
-## 组合式
+### 组合式
 
 pinia的store可以写成选项式，也可以使用`组合式`，就像在`setup`中写数据和方法一样
 
@@ -980,9 +980,9 @@ const { sum, tenSum } = storeToRefs(countStore);
 
 
 
-# 组件通信
+## 组件通信
 
-## props
+### props
 
 `props`可以`父传子`，也可以`子传父`
 
@@ -1025,7 +1025,7 @@ defineProps(['sendToy'])
 
 
 
-## `$event`事件对象
+### `$event`事件对象
 
 给组件绑定单击事件时，可以使用$event占位，代表这个数据传的是事件对象
 
@@ -1041,7 +1041,7 @@ defineProps(['sendToy'])
 
 
 
-## emits
+### emits
 
 自定义事件
 
@@ -1068,7 +1068,7 @@ emits("send-toy", "玩具")
 
 
 
-## mitt
+### mitt
 
 一个工具插件，用于组件通信
 
@@ -1141,7 +1141,7 @@ function useMitt() {
 
 
 
-## v-model
+### v-model
 
 对自定义组件使用`v-model`，实现双向绑定
 
@@ -1199,7 +1199,7 @@ let emits = defineEmits(['update:username','update:password'])
 
 
 
-## $attrs
+### $attrs
 
 用于`祖-孙`传递数据，方法是通过给子组件一些`props`，但是子组件并不接收，而是使用`v-bind:"$attrs"`，交给孙组件
 
@@ -1232,7 +1232,7 @@ defineProps(['msg', 'x', 'y'])
 
 
 
-## `$refs`/`$parent`
+### `$refs`/`$parent`
 
 `$refs`用于获取该组件中所有被`ref`标记的子组件，返回一个对象，键名是`ref标记名`，值是`组件实例对象`
 
@@ -1294,7 +1294,7 @@ defineExpose({ money })
 
 
 
-## provide
+### provide
 
 `provide `和`inject`是vue自带的方法，`provide`是用来向后代`提供数据`，`inject`是注入先代提供的数据
 
@@ -1326,9 +1326,9 @@ let { money, minusMoney } = inject('money', { money: 0, minusMoney: (value: numb
 
 
 
-# 插槽
+## 插槽
 
-## 默认插槽
+### 默认插槽
 
 在组件中给即将插入的元素占位
 
@@ -1358,7 +1358,7 @@ let { money, minusMoney } = inject('money', { money: 0, minusMoney: (value: numb
 
 
 
-## 具名插槽
+### 具名插槽
 
 可以在使用时，指定要插入的插槽位置，首先需要在子组件中给插槽定义名字
 
@@ -1390,7 +1390,7 @@ let { money, minusMoney } = inject('money', { money: 0, minusMoney: (value: numb
 
 可以动态的指定插槽名：`v-slot:[动态名字]`或者`#[动态名字]`
 
-## 作用域插槽
+### 作用域插槽
 
 当父组件使用插槽时，如果想要子组件内的数据，则需要`组用于插槽`
 
@@ -1398,9 +1398,9 @@ let { money, minusMoney } = inject('money', { money: 0, minusMoney: (value: numb
 
 
 
-# 其他
+## 其他
 
-## shallowRef
+### shallowRef
 
 浅层次的响应式，只会把`第一层`报错响应式，第一层指的是`xx.value`
 
@@ -1424,7 +1424,7 @@ function newPerson() {
 
 
 
-## shallowReactive
+### shallowReactive
 
 与shallowRef同理，
 
@@ -1443,7 +1443,7 @@ let person = shallowReactive({
 
 
 
-## readonly
+### readonly
 
 让一个变量只读，并且`readonly`接收的参数必须是一个`响应式对象`
 
@@ -1460,7 +1460,7 @@ let sum = readonly(ref(1))
 
 
 
-## toRaw
+### toRaw
 
 把一个`响应式对象`变成一个`原始数据`
 
@@ -1485,7 +1485,7 @@ let car1 = ref(car);	//失效，不会变成响应式的
 
 
 
-## customRef
+### customRef
 
 创建一个自定义的`ref`，并对其依赖项跟踪和更新触发进行`逻辑控制`
 
@@ -1525,9 +1525,9 @@ export const useDebounced = (value, delay = 200) => {
 
 
 
-# 新组件
+## 新组件
 
-## teleport
+### teleport
 
 `传送组件`，可以把包裹的HTML结构传送到任意标签中，并且逻辑代码，样式代码都不会消失
 
@@ -1557,7 +1557,7 @@ export const useDebounced = (value, delay = 200) => {
 
 
 
-## Suspense
+### Suspense
 
 异步组件，可以包裹一个异步的组件，让组件没有请求完成时显示默认样式，请求完成后显示组件
 
@@ -1605,7 +1605,7 @@ import { ref, Suspense } from "vue"
 
 
 
-## 全局API转移
+### 全局API转移
 
 转移至应用对象
 
@@ -1676,7 +1676,7 @@ app.directive("beautify", beautify)
 
 
 
-# 迁移
+## 迁移
 
 [从V2迁移](https://v3-migration.vuejs.org/zh/)
 
